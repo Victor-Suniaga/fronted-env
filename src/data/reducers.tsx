@@ -3,9 +3,13 @@
  */
 
 import { combineReducers } from 'redux';
+import searchReducer from './reducer/search.reducer'
+
 
 export default function createReducer() {
-    const rootReducer = combineReducers({});
+    const rootReducer = combineReducers({
+        search: searchReducer,
+    });
 
     return rootReducer;
 }
