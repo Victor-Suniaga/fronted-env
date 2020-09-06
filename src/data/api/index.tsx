@@ -9,5 +9,5 @@ export const get = async (city: string) => {
         url,
         {},
     );
-    return data;
+    return data && data[0] ? data[0] : {};
 };

@@ -9,13 +9,11 @@ import {
   ListContainer,
   ListElement,
   ListText,
-  TempContainer,
-  Temperature,
-  TempIcon,
 } from './components/styled/list';
 
 
-import SearchBar from './components/search'
+import SearchBar from './components/search';
+import TemperatureKPI from './components/temperatureKPI';
 
 const App = () => {
 
@@ -26,11 +24,8 @@ const App = () => {
         <img src={logo} className="App-logo" alt="logo" />
         <Title>whatwheather?</Title>
       </HeaderSection>
-      <SearchBar></SearchBar>
-      <TempContainer>
-        <TempIcon className="wi wi-night-sleet"></TempIcon>
-        <Temperature>30</Temperature>
-      </TempContainer>
+      <SearchBar />
+      <TemperatureKPI />
       <ListContainer>
         <ListElement>
           <ListText>Monday</ListText>

@@ -1,22 +1,40 @@
-import { createSlice, createAction } from '@reduxjs/toolkit';
+import { createSlice, createAction, Slice } from '@reduxjs/toolkit';
   
 function withPayloadType<T>() {
     return (t: T) => ({ payload: t })
 };
+
+export interface Forecast {
+    day: number,
+    symbol: {
+        name: string
+    },
+    temperature: {
+        value: number,
+        min: number,
+        max: number
+    }
+}
+export interface Climate {
+    location?: {
+        name: string,
+    },
+    forecast?: Array<Forecast>
+}
 
 export const searchReducer = {
     get: createAction('searchReducer/get', withPayloadType<string>()),
     getSuccess: createAction('searchReducer/getSuccess', withPayloadType<object>()),
     clean: createAction('searchReducer/clean'),
 };
-const initialState = {};
+const initialState: Climate = {};
 
-const searchSlice = createSlice({
+const searchSlice: Slice<any> = createSlice({
     name: 'searchReducer',
     initialState,
     reducers: {
         getSuccess: (state, { payload }) => {
-            return { ...state, ...payload?.response?.searchData }
+            return { ...state, ...payload }
         },
         clean: () => initialState,
     }

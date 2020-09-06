@@ -9,8 +9,6 @@ module.exports = () => {
         const data = {
             location: {
                 "name": elem,
-                "timezone": [],
-                "location": {}
             },
             forecast: []
         }

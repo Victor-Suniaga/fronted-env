@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { searchReducer } from '../data/reducer/search.reducer';
 
@@ -6,7 +6,7 @@ import { SearchInput, SearchContainer, SearchButton } from './styled/searchInput
 import { Icon } from './styled/list';
 
 const cities = ['Berlin', 'London', 'Toronto', 'Madrid', 'Seoul', 'Tokyo'];
-const SearchBar = memo(() => {
+const SearchBar = () => {
   const [value, setvalue] = useState('');
 
     const dispatch = useDispatch();
@@ -29,6 +29,6 @@ const SearchBar = memo(() => {
             </ SearchButton>
         </SearchContainer>
     );
-})
+};
 
 export default SearchBar;

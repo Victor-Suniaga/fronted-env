@@ -6,8 +6,7 @@ import App from "./App";
 import configureStore from './data/store';
 
 
-const initialState = {};
-let defaultStore = configureStore(initialState);
+const defaultStore = configureStore();
 
 ReactDOM.render(
   <React.StrictMode>
