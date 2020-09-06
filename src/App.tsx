@@ -14,6 +14,7 @@ import {
 
 import SearchBar from './components/search';
 import TemperatureKPI from './components/temperatureKPI';
+import DateListValues from './components/datelist';
 
 const App = () => {
 
@@ -26,13 +27,7 @@ const App = () => {
       </HeaderSection>
       <SearchBar />
       <TemperatureKPI />
-      <ListContainer>
-        <ListElement>
-          <ListText>Monday</ListText>
-          <ListText>32</ListText>
-          <Icon className="wi wi-night-sleet"></Icon>
-        </ListElement>
-      </ListContainer>
+      <DateListValues />
     </Background>
     
   );
