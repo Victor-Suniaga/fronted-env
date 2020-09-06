@@ -1,17 +1,26 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { searchReducer } from '../data/reducer/search.reducer';
 
 import { SearchInput, SearchContainer, SearchButton } from './styled/searchInput';
 import { Icon } from './styled/list';
+
+const cities = ['Berlin', 'London', 'Toronto', 'Madrid', 'Seoul', 'Tokyo'];
 const SearchBar = memo(() => {
+  const [value, setvalue] = useState('');
+
     const dispatch = useDispatch();
     const onClick = () => {
-            dispatch(searchReducer.get('Berlin'))
+        if (cities.includes(value)) {
+            dispatch(searchReducer.get(value))
+        }
     }
     return (
         <SearchContainer>
-            <SearchInput type="text"/>
+            <SearchInput
+                onChange={(e) => setvalue(e.target.value)}
+                value={value} 
+                type="text"/>
             <SearchButton
                 title="Search"
                 onClick={onClick}
